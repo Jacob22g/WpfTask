@@ -25,6 +25,7 @@ namespace WpfTask
 			}
 			else {
 				MessageBox.Show($"Invalid Email");
+				// Applying Error handling mechanism, for example: Retry pattern
 			}
 		}
 	}

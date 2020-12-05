@@ -39,28 +39,22 @@ namespace WpfTask
 							LoadJSON(reader.ReadToEnd());
 						}
 					}
+					else
+					{
+						//close the tab
+					}
 				}
 			}
 			catch (Exception ex) {
-				MessageBox.Show($"Fail to load file\n{ex}");
-				log.Error(ex.Message);
-
+				MessageBox.Show("Fail to load file");
+				log.Error(ex);
 			}
-
 		}
 
 		public void LoadJSON(string content) {
 			if (string.IsNullOrEmpty(content)) {
-				try
-				{
-					throw new Exception("File content cannot be empty");
-				}
-				catch (Exception ex)
-				{
-					log.Error(ex.Message);
-				}
+				log.Error("File content cannot be empty");
 			}
-
 			JsonLoad.ItemsSource = JsonConvert.DeserializeObject<List<Movie>>(content);
 		}
 	}

@@ -9,19 +9,22 @@ namespace WpfTask
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		private ActionTabViewModel actionTabViewModel;
-		private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+		private ActionTabViewModel actionTabViewModel = null;
+		private static readonly ILog log = null;
+
+		static MainWindow()
+		{
+			log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+		}
 
 		public MainWindow()
 		{
 			InitializeComponent();
-
-			log.Info("Application Initialize");
-
 			// Initialize viewModel
 			actionTabViewModel = new ActionTabViewModel();
 			// Bind the xaml TabControl to view model tabs
 			MainTab.ItemsSource = actionTabViewModel.Tabs;
+			log.Info("Application Initialize");
 		}
 
 		private void CloseTab_Btn_Click(object sender, MouseButtonEventArgs e)
