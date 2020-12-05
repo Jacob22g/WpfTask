@@ -20,7 +20,7 @@ namespace WpfTask
 
 		public void AddDataTableTab()
 		{
-			Tabs.Add(new ActionTabItem { Header = "JSON Tab", Content = new DataTableView() });
+			Tabs.Add(new ActionTabItem { Header = "Data Table Tab", Content = new DataTableView() });
 		}
 
 		public void AddEmailTab()

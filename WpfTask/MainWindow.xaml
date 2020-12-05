@@ -8,8 +8,7 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid Margin="5">
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="auto" />
-			<ColumnDefinition Width="auto" />
+			<ColumnDefinition Width="*" />
 			<ColumnDefinition Width="*" />
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
@@ -19,15 +18,15 @@
 		</Grid.RowDefinitions>
 
 		<TextBlock Grid.Column="0" Grid.Row="0" FontSize="20"
-				   Text="WPF Task" Grid.ColumnSpan="3"
+				   Text="WPF Task" Grid.ColumnSpan="3" TextAlignment="Center"
 				   Margin="0,0,0,5"/>
 
-		<Button x:Name="email_Btn" Content="send Email"
+		<Button x:Name="email_Btn" Content="Send Email"
 				Grid.Column="0" Grid.Row="1"
 				Margin="7" Click="Email_Btn_Click"/>
-		<Button x:Name="json_Btn" Content="Load JSON File"
+		<Button x:Name="dataTable_Btn" Content="Load File"
 				Grid.Column="1" Grid.Row="1"
-				Margin="7" Click="Json_Btn_Click"/>
+				Margin="7" Click="dataTable_Btn_Click"/>
 
 		<ScrollViewer Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3">
 			<TabControl x:Name="MainTab" Background="AliceBlue">
@@ -36,7 +35,7 @@
 					<DataTemplate>
 						<StackPanel Orientation="Horizontal" Height="20" Width="auto">
 							<TextBlock Width="auto" Text="{Binding Header}"/>
-							<Image Source="close.png" Width="10" Height="10" Margin="5,0,0,0" MouseDown="Image_MouseDown"/>
+							<Image Source="close.png" Width="10" Height="10" Margin="5,0,0,0" MouseDown="CloseTab_Btn_Click"/>
 						</StackPanel>
 					</DataTemplate>
 				</TabControl.ItemTemplate>
@@ -49,29 +48,6 @@
 
 			</TabControl>
 		</ScrollViewer>
-
-		<!--<local:SendEmailView Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" />-->
-		
-		<!--<DataGrid Name="JsonLoad"
-				  Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3"/>-->
-
-
-		<!--<TabControl x:Name="actionTabs" DockPanel.Dock="Right" Background="White">
-			<TabControl.ItemTemplate>
-				<DataTemplate>
-					<StackPanel Orientation="Horizontal" Height="21" Width="100">
-						<TextBlock Width="80" Text="{Binding Header}"/>
-						<Image Source="PathToFile\close.png" Width="20" Height="20" MouseDown="Image_MouseDown"/>
-					</StackPanel>
-				</DataTemplate>
-			</TabControl.ItemTemplate>
-			<TabControl.ContentTemplate>
-				<DataTemplate>
-					<UserControl Height="800" Width="1220" Content="{Binding Content}" Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-				</DataTemplate>
-			</TabControl.ContentTemplate>
-		</TabControl>-->
-
 
 	</Grid>
 </Window>

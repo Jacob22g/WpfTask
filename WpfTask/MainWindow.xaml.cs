@@ -20,32 +20,25 @@ namespace WpfTask
 			MainTab.ItemsSource = vmd.Tabs;
 		}
 
-		private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+		private void CloseTab_Btn_Click(object sender, MouseButtonEventArgs e)
 		{
 			// This event will be thrown when on a close image clicked
 			vmd.Tabs.RemoveAt(MainTab.SelectedIndex);
 		}
 
-		private void Json_Btn_Click(object sender, RoutedEventArgs e)
+		private void dataTable_Btn_Click(object sender, RoutedEventArgs e)
 		{
-			// Open JSON tab
+			// Open Data Table tab and load JOSN
 			// Populate the view model tabs
 			vmd.AddDataTableTab();
-
 			MainTab.Items.Refresh();
 		}
 
 		private void Email_Btn_Click(object sender, RoutedEventArgs e)
 		{
 			// Open an Email tab
-			//MessageBox.Show("email_Btn_Click");
-
-			//MainTab.Items.Clear();
-
 			// Populate the view model tabs
 			vmd.AddEmailTab();
-
-			//MainTab.Items.Add(new SendEmailView());
 			MainTab.Items.Refresh(); 
 		}
 
