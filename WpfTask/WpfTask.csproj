@@ -119,5 +119,11 @@
   <ItemGroup>
     <Resource Include="close.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonUtills\CommonUtills.csproj">
+      <Project>{78d6b697-4ca6-419e-9962-a21e04aefbce}</Project>
+      <Name>CommonUtills</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

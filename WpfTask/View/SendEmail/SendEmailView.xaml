@@ -21,7 +21,7 @@
 		<TextBox x:Name="email_TB" Grid.Column="1" Margin="0,5,0,5"/>
 		<Label Grid.Row="1">Subject:</Label>
 		<TextBox x:Name="subject_TB" Grid.Row="1" Grid.Column="1" Margin="0,5,0,5" />
-		<Label Grid.Row="2">Content:</Label>
+		<Label Grid.Row="2">Body:</Label>
 		<TextBox x:Name="body_TB" Grid.Row="2" Grid.Column="1" Margin="0,5,0,0" AcceptsReturn="True" />
 		<Button Grid.Row="3" Grid.Column="1" Margin="150,5,0,5" 
 				Click="sendButton_click" Content="Send"/>

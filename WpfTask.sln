@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTask", "WpfTask\WpfTask.csproj", "{106AD819-DD50-4F9B-97BC-AC0A2A126F60}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtills", "CommonUtills\CommonUtills.csproj", "{78D6B697-4CA6-419E-9962-A21E04AEFBCE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{106AD819-DD50-4F9B-97BC-AC0A2A126F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{106AD819-DD50-4F9B-97BC-AC0A2A126F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{106AD819-DD50-4F9B-97BC-AC0A2A126F60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78D6B697-4CA6-419E-9962-A21E04AEFBCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78D6B697-4CA6-419E-9962-A21E04AEFBCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78D6B697-4CA6-419E-9962-A21E04AEFBCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78D6B697-4CA6-419E-9962-A21E04AEFBCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
