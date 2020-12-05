@@ -8,29 +8,29 @@ namespace WpfTask
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		private ActionTabViewModel vmd;
+		private ActionTabViewModel actionTabViewModel;
 
 		public MainWindow()
 		{
 			InitializeComponent();
 
 			// Initialize viewModel
-			vmd = new ActionTabViewModel();
+			actionTabViewModel = new ActionTabViewModel();
 			// Bind the xaml TabControl to view model tabs
-			MainTab.ItemsSource = vmd.Tabs;
+			MainTab.ItemsSource = actionTabViewModel.Tabs;
 		}
 
 		private void CloseTab_Btn_Click(object sender, MouseButtonEventArgs e)
 		{
 			// This event will be thrown when on a close image clicked
-			vmd.Tabs.RemoveAt(MainTab.SelectedIndex);
+			actionTabViewModel.Tabs.RemoveAt(MainTab.SelectedIndex);
 		}
 
 		private void dataTable_Btn_Click(object sender, RoutedEventArgs e)
 		{
 			// Open Data Table tab and load JOSN
 			// Populate the view model tabs
-			vmd.AddDataTableTab();
+			actionTabViewModel.AddDataTableTab();
 			MainTab.Items.Refresh();
 		}
 
@@ -38,7 +38,7 @@ namespace WpfTask
 		{
 			// Open an Email tab
 			// Populate the view model tabs
-			vmd.AddEmailTab();
+			actionTabViewModel.AddEmailTab();
 			MainTab.Items.Refresh(); 
 		}
 
