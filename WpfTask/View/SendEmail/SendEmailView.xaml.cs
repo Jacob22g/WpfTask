@@ -20,12 +20,12 @@ namespace WpfTask
 
 		private void sendButton_click(object sender, RoutedEventArgs e)
 		{
-			if (EmailUtills.GmailEmailSender(email_TB.Text, subject_TB.Text, body_TB.Text)) {
+			if (GmailSmtp.GmailEmailSender(email_TB.Text, subject_TB.Text, body_TB.Text)) {
 				MessageBox.Show($"Email sent to { email_TB.Text } successfully");
 			}
 			else {
 				MessageBox.Show($"Invalid Email");
-				// Applying Error handling mechanism, for example: Retry pattern
+				// Applying Error handling mechanism, for example: retry design pattern
 			}
 		}
 	}

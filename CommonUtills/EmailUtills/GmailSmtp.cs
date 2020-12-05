@@ -8,15 +8,15 @@ using System.Text.RegularExpressions;
 
 namespace CommonUtills
 {
-    public class EmailUtills
+    public class GmailSmtp
     {
 		static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
 		// static regex
-		static string emailRegex = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
+		static readonly string emailRegex = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
 
 		// static is valid email
-		static public Boolean isEmailValid(string email) {
+		static public Boolean isValidEmail(string email) {
 			return Regex.IsMatch(email, emailRegex, RegexOptions.IgnoreCase);
 		}
 
@@ -24,7 +24,7 @@ namespace CommonUtills
 		static public Boolean GmailEmailSender(string reciverEmail, string subject, string body) {
 			try
 			{
-				if (isEmailValid(reciverEmail))
+				if (isValidEmail(reciverEmail))
 				{
 					using (SmtpClient client = new SmtpClient())
 					{
@@ -47,7 +47,7 @@ namespace CommonUtills
 			}
 			catch (Exception ex)
 			{
-				log.Error(ex.Message);
+				log.Error(ex);
 			}
 			return false;
 		}

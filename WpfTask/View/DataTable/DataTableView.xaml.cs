@@ -12,7 +12,11 @@ namespace WpfTask
 	/// </summary>
 	public partial class DataTableView : System.Windows.Controls.UserControl
 	{
-		static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+		static readonly log4net.ILog log = null;
+		static DataTableView()
+		{
+			log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+		}
 
 		public DataTableView()
 		{
@@ -39,10 +43,6 @@ namespace WpfTask
 							LoadJSON(reader.ReadToEnd());
 						}
 					}
-					else
-					{
-						//close the tab
-					}
 				}
 			}
 			catch (Exception ex) {
@@ -55,7 +55,7 @@ namespace WpfTask
 			if (string.IsNullOrEmpty(content)) {
 				log.Error("File content cannot be empty");
 			}
-			JsonLoad.ItemsSource = JsonConvert.DeserializeObject<List<Movie>>(content);
+			MainDataGrid.ItemsSource = JsonConvert.DeserializeObject<List<object>>(content);
 		}
 	}
 }
