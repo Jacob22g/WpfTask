@@ -12,6 +12,8 @@ namespace WpfTask
 	/// </summary>
 	public partial class DataTableView : System.Windows.Controls.UserControl
 	{
+		static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
 		public DataTableView()
 		{
 			InitializeComponent();
@@ -41,13 +43,22 @@ namespace WpfTask
 			}
 			catch (Exception ex) {
 				MessageBox.Show($"Fail to load file\n{ex}");
+				log.Error(ex.Message);
+
 			}
 
 		}
 
 		public void LoadJSON(string content) {
 			if (string.IsNullOrEmpty(content)) {
-				throw new Exception("File content cannot be empty");
+				try
+				{
+					throw new Exception("File content cannot be empty");
+				}
+				catch (Exception ex)
+				{
+					log.Error(ex.Message);
+				}
 			}
 
 			JsonLoad.ItemsSource = JsonConvert.DeserializeObject<List<Movie>>(content);
